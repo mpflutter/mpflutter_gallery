@@ -1,0 +1,42 @@
+name: mpflutter_gallery
+description: The gallery of MPFlutter
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.1.5 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  full_screen_back_gesture: 0.0.2
+  mpflutter:
+    path: /Users/saiakirahui/Documents/mpflutter/mpflutter
+  mpflutter_build_tools:
+    path: /Users/saiakirahui/Documents/mpflutter/mpflutter_build_tools
+  wechat_miniprogram_api_mpflutter:
+    path: /Users/saiakirahui/Documents/mpflutter_plugins/universal_miniprogram_api
+  waterfall_flow: 3.0.3
+  fl_chart: 0.60.0
+  flutter_shaders: ^0.1.0
+  http: ^1.1.0
+  dio: ^5.4.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: fonts/Roboto-Regular.ttf
+        - asset: fonts/Roboto-Bold.ttf
+    - family: Noto Sans SC
+      fonts:
+        - asset: fonts/NotoSansSC-Regular.ttf
+  shaders:
+    - shaders/simple.frag

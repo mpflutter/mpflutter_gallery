@@ -7,6 +7,7 @@ final examples = {
   "Animation One Page": "/animation_one_page",
   "图表 fl_chart": "/flchart_page",
   "Simple Shader": "/simple_shader_page",
+  "Form App": "/form_app/home",
 };
 final exampleKeys = examples.keys.toList();
 

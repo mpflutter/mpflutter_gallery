@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mpflutter_gallery/auto_test/wx_async_result.test.dart';
+import 'package:mpflutter_gallery/auto_test/wx_dio.test.dart';
 import 'package:mpflutter_gallery/auto_test/wx_http.test.dart';
 import 'package:mpflutter_gallery/auto_test/wx_sync_result.test.dart';
 
@@ -22,6 +23,7 @@ class _AutoTestPageState extends State<AutoTestPage> {
           WXSyncResultTest(),
           WXAsyncResultTest(),
           WXHttpTest(),
+          WXDioTest(),
         ],
       ),
     );

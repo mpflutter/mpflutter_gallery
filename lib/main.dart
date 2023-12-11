@@ -1,4 +1,4 @@
-import 'package:mpflutter/mpflutter.dart';
+import 'package:mpflutter_core/mpflutter_core.dart';
 import 'package:flutter/material.dart' deferred as material
     show MaterialApp, ThemeData, AppBarTheme, Colors, TargetPlatform, Locale;
 // import 'package:full_screen_back_gesture/full_screen_back_gesture.dart';

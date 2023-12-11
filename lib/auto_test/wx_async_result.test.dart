@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wechat_miniprogram_api_mpflutter/wechat_miniprogram_api_mpflutter.dart';
+import 'package:mpflutter_wechat_api/mpflutter_wechat_api.dart';
 
 const _caseTitle = "wx.getSystemInfoAsync";
 

@@ -14,6 +14,8 @@ import 'package:mpflutter_gallery/ui/ui_waterfall_view.dart'
 import 'package:mpflutter_gallery/ui/ui_flchart.dart' deferred as ui_flchart;
 import 'package:mpflutter_gallery/ui/form_app/main.dart'
     deferred as ui_form_app;
+import 'package:mpflutter_gallery/ext/wx_video_view.dart'
+    deferred as wx_video_view;
 
 void main() async {
   Logger.logLevel = LogLevel.info;
@@ -24,6 +26,7 @@ void main() async {
   ui_waterfall_view.loadLibrary();
   ui_flchart.loadLibrary();
   ui_form_app.loadLibrary();
+  wx_video_view.loadLibrary();
   runMPApp(material.MaterialApp(
     title: "",
     theme: material.ThemeData(
@@ -56,6 +59,7 @@ void main() async {
       '/form_app/autofill': (context) => ui_form_app.AutofillDemo(),
       '/form_app/form_widgets': (context) => ui_form_app.FormWidgetsDemo(),
       '/form_app/validation': (context) => ui_form_app.FormValidationDemo(),
+      '/ext/wx_video_view': (context) => wx_video_view.WXVideoView(),
     },
     navigatorObservers: [MPNavigatorObserver()],
   ));

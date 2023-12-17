@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mpflutter_core/mpflutter_core.dart';
 
 final examples = {
   "MPFlutter Auto Test": "/auto_test",
@@ -8,6 +9,7 @@ final examples = {
   "图表 fl_chart": "/flchart_page",
   "Simple Shader": "/simple_shader_page",
   "Form App": "/form_app/home",
+  "Ext - WXVideoView": "/ext/wx_video_view",
 };
 final exampleKeys = examples.keys.toList();
 

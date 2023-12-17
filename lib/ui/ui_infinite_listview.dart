@@ -13,6 +13,12 @@ class _UIInfiniteListViewPageState extends State<UIInfiniteListViewPage> {
   bool _isLoading = false;
 
   @override
+  void initState() {
+    super.initState();
+    print("_UIInfiniteListViewPageState");
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -40,6 +46,7 @@ class _UIInfiniteListViewPageState extends State<UIInfiniteListViewPage> {
         },
         child: RefreshIndicator(
           onRefresh: () async {
+            throw "fkjdahfjk";
             await Future.delayed(const Duration(seconds: 2));
           },
           child: ListView.builder(

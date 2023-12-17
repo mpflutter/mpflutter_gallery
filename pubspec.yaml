@@ -17,6 +17,9 @@ dependencies:
     path: /Users/saiakirahui/Documents/mpflutter/mpflutter_build_tools
   mpflutter_wechat_api:
     path: /Users/saiakirahui/Documents/mpflutter/mpflutter_wechat_api
+  mpflutter_wechat_videoview:
+    path: /Users/saiakirahui/Documents/mpflutter/mpflutter_wechat_videoview
+  
   waterfall_flow: 3.0.3
   fl_chart: 0.60.0
   flutter_shaders: ^0.1.0

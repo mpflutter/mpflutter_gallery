@@ -9,6 +9,8 @@ class WXVideoView extends StatefulWidget {
 }
 
 class _WXVideoViewState extends State<WXVideoView> {
+  final controller = MPFlutter_Wechat_VideoViewController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,15 +22,22 @@ class _WXVideoViewState extends State<WXVideoView> {
           SizedBox(
             height: 300,
             child: MPFlutter_Wechat_VideoView(
+              controller: controller,
               src: "https://download.samplelib.com/mp4/sample-5s.mp4",
             ),
           ),
-          ListTile(title: Text('src: sample-5s')),
-          ListTile(title: Text('src: sample-5s')),
-          ListTile(title: Text('src: sample-5s')),
-          ListTile(title: Text('src: sample-5s')),
-          ListTile(title: Text('src: sample-5s')),
-          ListTile(title: Text('src: sample-5s')),
+          ListTile(
+            title: const Text('Play'),
+            onTap: () {
+              controller.getVideoContext()?.play();
+            },
+          ),
+          ListTile(
+            title: const Text('Pause'),
+            onTap: () {
+              controller.getVideoContext()?.pause();
+            },
+          ),
         ],
       ),
     );

@@ -10,6 +10,8 @@ class WXVideoView extends StatefulWidget {
 
 class _WXVideoViewState extends State<WXVideoView> {
   final controller = MPFlutter_Wechat_VideoViewController();
+  var src = "https://download.samplelib.com/mp4/sample-5s.mp4";
+  var opacity = 1.0;
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +23,22 @@ class _WXVideoViewState extends State<WXVideoView> {
         children: [
           SizedBox(
             height: 300,
-            child: MPFlutter_Wechat_VideoView(
-              controller: controller,
-              src: "https://download.samplelib.com/mp4/sample-5s.mp4",
+            child: Opacity(
+              opacity: opacity,
+              child: MPFlutter_Wechat_VideoView(
+                controller: controller,
+                src: src,
+                onPause: () {
+                  print("paused");
+                },
+              ),
             ),
+          ),
+          ListTile(
+            title: const Text('Push Next'),
+            onTap: () {
+              Navigator.of(context).pushNamed("/ui_waterfall_view");
+            },
           ),
           ListTile(
             title: const Text('Play'),
@@ -38,6 +52,22 @@ class _WXVideoViewState extends State<WXVideoView> {
               controller.getVideoContext()?.pause();
             },
           ),
+          ListTile(
+            title: const Text('Change src'),
+            onTap: () {
+              setState(() {
+                src = "https://download.samplelib.com/mp4/sample-10s.mp4";
+              });
+            },
+          ),
+          ListTile(
+            title: const Text('Change opcaity'),
+            onTap: () {
+              setState(() {
+                opacity = 0.1;
+              });
+            },
+          )
         ],
       ),
     );

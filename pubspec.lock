@@ -222,14 +222,14 @@ packages:
       path: "/Users/saiakirahui/Documents/mpflutter/mpflutter_build_tools"
       relative: false
     source: path
-    version: "2.0.0-alpha.5"
+    version: "2.0.0-alpha.6"
   mpflutter_core:
     dependency: "direct main"
     description:
       path: "/Users/saiakirahui/Documents/mpflutter/mpflutter"
       relative: false
     source: path
-    version: "2.0.0-alpha.4"
+    version: "2.0.0-alpha.6"
   mpflutter_wechat_api:
     dependency: "direct main"
     description:
@@ -240,7 +240,7 @@ packages:
   mpflutter_wechat_videoview:
     dependency: "direct main"
     description:
-      path: "/Users/saiakirahui/Documents/mpflutter/mpflutter_wechat_videoview"
+      path: "/Users/saiakirahui/Documents/mpflutter/mpflutter_wechat_plugins/videoview"
       relative: false
     source: path
     version: "0.0.1"
@@ -465,6 +465,22 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.0.3"
+  yaml:
+    dependency: transitive
+    description:
+      name: yaml
+      sha256: "75769501ea3489fca56601ff33454fe45507ea3bfb014161abc3b43ae25989d5"
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "3.1.2"
+  yaml_edit:
+    dependency: transitive
+    description:
+      name: yaml_edit
+      sha256: "1579d4a0340a83cf9e4d580ea51a16329c916973bffd5bd4b45e911b25d46bfd"
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "2.1.1"
 sdks:
   dart: ">=3.2.0 <4.0.0"
   flutter: ">=3.16.0"

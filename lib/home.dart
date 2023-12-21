@@ -10,6 +10,7 @@ final examples = {
   "Simple Shader": "/simple_shader_page",
   "Form App": "/form_app/home",
   "Ext - WXVideoView": "/ext/wx_video_view",
+  "Ext - WXButton": "/ext/wx_button",
 };
 final exampleKeys = examples.keys.toList();
 

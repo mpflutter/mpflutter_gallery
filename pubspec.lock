@@ -237,6 +237,13 @@ packages:
       relative: false
     source: path
     version: "2.0.0-alpha.4"
+  mpflutter_wechat_button:
+    dependency: "direct main"
+    description:
+      path: "/Users/saiakirahui/Documents/mpflutter/mpflutter_wechat_plugins/button"
+      relative: false
+    source: path
+    version: "0.0.1"
   mpflutter_wechat_videoview:
     dependency: "direct main"
     description:

@@ -28,8 +28,17 @@ class _WXVideoViewState extends State<WXVideoView> {
               child: MPFlutter_Wechat_VideoView(
                 controller: controller,
                 src: src,
-                onPause: () {
+                danmuBtn: true,
+                enableDanmu: true,
+                danmuList: const [
+                  {"text": '第 1s 出现的弹幕', "color": '#ff0000', "time": 1},
+                  {"text": '第 3s 出现的弹幕', "color": '#ff00ff', "time": 3}
+                ],
+                onPause: (detail) {
                   print("paused");
+                },
+                onTimeUpdate: (detail) {
+                  print("onTimeUpdate = " + detail["currentTime"]);
                 },
               ),
             ),

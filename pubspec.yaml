@@ -16,6 +16,7 @@ dependencies:
   mpflutter_wechat_api: any
   mpflutter_wechat_videoview: any
   mpflutter_wechat_button: any
+  mpflutter_wechat_mapview: any
   
   waterfall_flow: 3.0.3
   fl_chart: 0.60.0

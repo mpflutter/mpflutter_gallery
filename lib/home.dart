@@ -11,6 +11,7 @@ final examples = {
   "Form App": "/form_app/home",
   "Ext - WXVideoView": "/ext/wx_video_view",
   "Ext - WXButton": "/ext/wx_button",
+  "Ext - WXMapView": "/ext/wx_map_view",
 };
 final exampleKeys = examples.keys.toList();
 

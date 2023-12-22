@@ -11,16 +11,11 @@ dependencies:
   flutter:
     sdk: flutter
   full_screen_back_gesture: 0.0.2
-  mpflutter_core:
-    path: /Users/saiakirahui/Documents/mpflutter/mpflutter
-  mpflutter_build_tools:
-    path: /Users/saiakirahui/Documents/mpflutter/mpflutter_build_tools
-  mpflutter_wechat_api:
-    path: /Users/saiakirahui/Documents/mpflutter/mpflutter_wechat_api
-  mpflutter_wechat_videoview:
-    path: /Users/saiakirahui/Documents/mpflutter/mpflutter_wechat_plugins/videoview
-  mpflutter_wechat_button:
-    path: /Users/saiakirahui/Documents/mpflutter/mpflutter_wechat_plugins/button
+  mpflutter_core: any
+  mpflutter_build_tools: any
+  mpflutter_wechat_api: any
+  mpflutter_wechat_videoview: any
+  mpflutter_wechat_button: any
   
   waterfall_flow: 3.0.3
   fl_chart: 0.60.0

@@ -17,7 +17,11 @@ class _WXAsyncResultTestState extends State<WXAsyncResultTest> {
   @override
   void initState() {
     super.initState();
-    runTest();
+    try {
+      runTest();
+    } catch (e) {
+      print(e);
+    }
   }
 
   void runTest() {

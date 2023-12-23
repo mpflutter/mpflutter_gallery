@@ -17,7 +17,11 @@ class _WXDioTestState extends State<WXDioTest> {
   @override
   void initState() {
     super.initState();
-    runTest();
+    try {
+      runTest();
+    } catch (e) {
+      print(e);
+    }
   }
 
   void runTest() async {

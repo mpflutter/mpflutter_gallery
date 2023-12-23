@@ -19,7 +19,11 @@ class _WXHttpTestState extends State<WXHttpTest> {
   @override
   void initState() {
     super.initState();
-    runTest();
+    try {
+      runTest();
+    } catch (e) {
+      print(e);
+    }
   }
 
   void runTest() async {

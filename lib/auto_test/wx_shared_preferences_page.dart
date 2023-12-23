@@ -18,7 +18,11 @@ class _WXSharedPreferencesTestState extends State<WXSharedPreferencesTest> {
   @override
   void initState() {
     super.initState();
-    runTest();
+    try {
+      runTest();
+    } catch (e) {
+      print(e);
+    }
   }
 
   void runTest() async {

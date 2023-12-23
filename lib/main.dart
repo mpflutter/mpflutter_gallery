@@ -18,6 +18,7 @@ import 'package:mpflutter_gallery/ext/wx_video_view.dart'
     deferred as wx_video_view;
 import 'package:mpflutter_gallery/ext/wx_map_view.dart' deferred as wx_map_view;
 import 'package:mpflutter_gallery/ext/wx_button.dart' deferred as wx_button;
+import 'package:mpflutter_gallery/ext/wx_web_view.dart' deferred as wx_web_view;
 
 void main() async {
   Logger.logLevel = LogLevel.info;
@@ -31,6 +32,7 @@ void main() async {
   wx_video_view.loadLibrary();
   wx_map_view.loadLibrary();
   wx_button.loadLibrary();
+  wx_web_view.loadLibrary();
   runMPApp(material.MaterialApp(
     title: "",
     theme: material.ThemeData(
@@ -66,6 +68,7 @@ void main() async {
       '/ext/wx_video_view': (context) => wx_video_view.WXVideoView(),
       '/ext/wx_map_view': (context) => wx_map_view.WXMapView(),
       '/ext/wx_button': (context) => wx_button.WXButton(),
+      '/ext/wx_web_view': (context) => wx_web_view.WXWebView(),
     },
     navigatorObservers: [MPNavigatorObserver()],
   ));

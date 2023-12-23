@@ -258,6 +258,13 @@ packages:
       relative: false
     source: path
     version: "0.0.1"
+  mpflutter_wechat_webview:
+    dependency: "direct main"
+    description:
+      path: "../mpflutter_wechat_plugins/webview"
+      relative: true
+    source: path
+    version: "0.0.1"
   path:
     dependency: transitive
     description:

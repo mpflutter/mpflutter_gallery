@@ -29,14 +29,6 @@ dependencies:
   english_words: ^4.0.0
   shared_preferences: ^2.2.2
 
-dependency_overrides: 
-  mpflutter_core:
-    path: /Users/saiakirahui/Documents/mpflutter/mpflutter
-  mpflutter_build_tools:
-    path: /Users/saiakirahui/Documents/mpflutter/mpflutter_build_tools
-  mpflutter_wechat_api:
-    path: /Users/saiakirahui/Documents/mpflutter/mpflutter_wechat_api
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -54,3 +46,5 @@ flutter:
         - asset: fonts/NotoSansSC-Regular.ttf
   shaders:
     - shaders/simple.frag
+  assets:
+    - assets/

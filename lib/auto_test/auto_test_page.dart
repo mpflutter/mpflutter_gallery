@@ -4,6 +4,7 @@ import 'package:mpflutter_gallery/auto_test/wx_dio.test.dart';
 import 'package:mpflutter_gallery/auto_test/wx_http.test.dart';
 import 'package:mpflutter_gallery/auto_test/wx_shared_preferences_page.dart';
 import 'package:mpflutter_gallery/auto_test/wx_sync_result.test.dart';
+import 'package:mpflutter_gallery/auto_test/big_text_page.dart';
 
 class AutoTestPage extends StatefulWidget {
   const AutoTestPage({super.key});
@@ -26,6 +27,7 @@ class _AutoTestPageState extends State<AutoTestPage> {
           WXHttpTest(),
           WXDioTest(),
           WXSharedPreferencesTest(),
+          WXBigTextTest(),
         ],
       ),
     );

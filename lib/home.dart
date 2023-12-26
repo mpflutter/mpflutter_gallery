@@ -24,6 +24,23 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  late MPFlutterWechatAppDelegate appDelegate;
+
+  @override
+  void initState() {
+    super.initState();
+    appDelegate = MPFlutterWechatAppDelegate(onShow: () {
+      print("onshow");
+    }, onHide: () {
+      print("onhide");
+    }, onShareAppMessage: (detail) {
+      return {
+        "title": "这是标题",
+        "path": "pages/index/index",
+      };
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

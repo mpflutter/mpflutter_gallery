@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mpflutter_core/mpflutter_core.dart';
 
 class UIInfiniteListViewPage extends StatefulWidget {
   const UIInfiniteListViewPage({Key? key}) : super(key: key);
@@ -16,6 +17,18 @@ class _UIInfiniteListViewPageState extends State<UIInfiniteListViewPage> {
   void initState() {
     super.initState();
     print("_UIInfiniteListViewPageState");
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    MPFlutterWechatAppShareManager.setAppShareInfo(
+      context: context,
+      title: '无限长 ListView',
+      query: {
+        'routeName': '/ui_infinite_listview',
+      },
+    );
   }
 
   @override

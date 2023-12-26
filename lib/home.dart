@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:mpflutter_core/mpflutter_core.dart';
 
@@ -29,16 +31,36 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    appDelegate = MPFlutterWechatAppDelegate(onShow: () {
-      print("onshow");
-    }, onHide: () {
-      print("onhide");
-    }, onShareAppMessage: (detail) {
-      return {
-        "title": "这是标题",
-        "path": "pages/index/index",
-      };
-    });
+    appDelegate = MPFlutterWechatAppDelegate(
+      onLaunch: (query) {
+        if (query.isNotEmpty) {
+          if (query["routeName"] == "/ui_infinite_listview") {
+            Navigator.of(context).pushNamed("/ui_infinite_listview");
+          }
+        }
+      },
+      onShow: () {
+        print("onshow");
+      },
+      onHide: () {
+        print("onhide");
+      },
+      onShareAppMessage: (detail) {
+        return MPFlutterWechatAppShareManager.onShareAppMessage(detail);
+      },
+    );
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    MPFlutterWechatAppShareManager.setAppShareInfo(
+      context: context,
+      title: 'MPFlutter 小程序示例',
+      query: {
+        'routeName': '/',
+      },
+    );
   }
 
   @override

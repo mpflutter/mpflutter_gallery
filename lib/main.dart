@@ -23,16 +23,16 @@ import 'package:mpflutter_gallery/ext/wx_web_view.dart' deferred as wx_web_view;
 void main() async {
   Logger.logLevel = LogLevel.info;
   await material.loadLibrary();
-  auto_test_page.loadLibrary();
-  animation_one_page.loadLibrary();
-  ui_infinite_listview.loadLibrary();
-  ui_waterfall_view.loadLibrary();
-  ui_flchart.loadLibrary();
-  ui_form_app.loadLibrary();
-  wx_video_view.loadLibrary();
-  wx_map_view.loadLibrary();
-  wx_button.loadLibrary();
-  wx_web_view.loadLibrary();
+  await auto_test_page.loadLibrary();
+  await animation_one_page.loadLibrary();
+  await ui_infinite_listview.loadLibrary();
+  await ui_waterfall_view.loadLibrary();
+  await ui_flchart.loadLibrary();
+  await ui_form_app.loadLibrary();
+  await wx_video_view.loadLibrary();
+  await wx_map_view.loadLibrary();
+  await wx_button.loadLibrary();
+  await wx_web_view.loadLibrary();
   runMPApp(material.MaterialApp(
     title: "",
     theme: material.ThemeData(

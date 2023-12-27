@@ -32,13 +32,8 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     appDelegate = MPFlutterWechatAppDelegate(
-      onLaunch: (query) {
-        if (query.isNotEmpty) {
-          if (query["routeName"] == "/ui_infinite_listview") {
-            Navigator.of(context).pushNamed("/ui_infinite_listview");
-          }
-        }
-      },
+      onLaunch: _onLaunchEnter,
+      onEnter: _onLaunchEnter,
       onShow: () {
         print("onshow");
       },
@@ -49,6 +44,14 @@ class _HomePageState extends State<HomePage> {
         return MPFlutterWechatAppShareManager.onShareAppMessage(detail);
       },
     );
+  }
+
+  void _onLaunchEnter(query) {
+    if (query.isNotEmpty) {
+      if (query["routeName"] == "/ui_infinite_listview") {
+        Navigator.of(context).pushNamed("/ui_infinite_listview");
+      }
+    }
   }
 
   @override

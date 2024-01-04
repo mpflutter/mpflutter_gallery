@@ -7,6 +7,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:json_annotation/json_annotation.dart';
+import 'package:mpflutter_core/mpflutter_core.dart';
 
 part 'sign_in_http.g.dart';
 
@@ -47,62 +48,56 @@ class _SignInHttpDemoState extends State<SignInHttpDemo> {
       appBar: AppBar(
         title: const Text('Sign in Form'),
       ),
-      body: Form(
-        child: Scrollbar(
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              children: [
-                ...[
-                  TextFormField(
-                    autofocus: true,
-                    textInputAction: TextInputAction.next,
-                    decoration: const InputDecoration(
-                      filled: true,
-                      hintText: 'Your email address',
-                      labelText: 'Email',
-                    ),
-                    onChanged: (value) {
-                      formData.email = value;
-                    },
-                  ),
-                  TextFormField(
-                    decoration: const InputDecoration(
-                      filled: true,
-                      labelText: 'Password',
-                    ),
-                    obscureText: true,
-                    onChanged: (value) {
-                      formData.password = value;
-                    },
-                  ),
-                  TextButton(
-                    child: const Text('Sign in'),
-                    onPressed: () async {
-                      // Use a JSON encoded string to send
-                      var result = await widget.httpClient!.post(
-                          Uri.parse('https://example.com/signin'),
-                          body: json.encode(formData.toJson()),
-                          headers: {'content-type': 'application/json'});
+      body: AnimatedContainer(
+        duration: const Duration(milliseconds: 300),
+        height: MediaQuery.of(context).size.height -
+            MediaQuery.of(context).viewInsets.bottom,
+        curve: Curves.ease,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ...[
+              TextFormField(
+                autofocus: true,
+                textInputAction: TextInputAction.next,
+                keyboardType: TextInputType.number,
+                decoration: const InputDecoration(
+                  filled: true,
+                  hintText: '电话号码',
+                  labelText: '电话号码',
+                ),
+                onChanged: (value) {
+                  formData.email = value;
+                },
+              ),
+              TextFormField(
+                decoration: const InputDecoration(
+                  filled: true,
+                  labelText: 'Password',
+                ),
+                obscureText: true,
+                onChanged: (value) {
+                  formData.password = value;
+                },
+              ),
+              TextButton(
+                child: const Text('Sign in'),
+                onPressed: () async {
+                  // Use a JSON encoded string to send
+                  var result = await widget.httpClient!.post(
+                      Uri.parse('https://example.com/signin'),
+                      body: json.encode(formData.toJson()),
+                      headers: {'content-type': 'application/json'});
 
-                      _showDialog(switch (result.statusCode) {
-                        200 => 'Successfully signed in.',
-                        401 => 'Unable to sign in.',
-                        _ => 'Something went wrong. Please try again.'
-                      });
-                    },
-                  ),
-                ].expand(
-                  (widget) => [
-                    widget,
-                    const SizedBox(
-                      height: 24,
-                    )
-                  ],
-                )
-              ],
-            ),
-          ),
+                  _showDialog(switch (result.statusCode) {
+                    200 => 'Successfully signed in.',
+                    401 => 'Unable to sign in.',
+                    _ => 'Something went wrong. Please try again.'
+                  });
+                },
+              ),
+            ]
+          ],
         ),
       ),
     );

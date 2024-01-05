@@ -4,6 +4,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart' as intl;
+import 'package:mpflutter_wechat_editable/mpflutter_wechat_editable.dart';
 
 class FormWidgetsDemo extends StatefulWidget {
   const FormWidgetsDemo({super.key});
@@ -20,6 +21,8 @@ class _FormWidgetsDemoState extends State<FormWidgetsDemo> {
   double maxValue = 0;
   bool? brushedTeeth = false;
   bool enableFeature = false;
+  final ctl = TextEditingController(text: "Hello");
+  final focusNode2 = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -42,18 +45,59 @@ class _FormWidgetsDemoState extends State<FormWidgetsDemo> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       ...[
-                        TextFormField(
-                          decoration: const InputDecoration(
-                            filled: true,
-                            hintText: 'Enter a title...',
-                            labelText: 'Title',
+                        Container(
+                          height: 44,
+                          width: 300,
+                          color: Colors.blueGrey,
+                          child: MPFlutter_Wechat_EditableInput(
+                            controller: ctl,
+                            cursorColor: Colors.white,
+                            style: const TextStyle(
+                                fontSize: 16, color: Colors.white),
+                            textAlign: TextAlign.center,
+                            autofocus: true,
+                            keyboardType: TextInputType.text,
+                            textInputAction: TextInputAction.next,
+                            onFocus: () {
+                              print("onFocus");
+                            },
+                            onBlur: () {
+                              print("onBlur");
+                            },
+                            onChanged: (value) {
+                              print("onChanged:" + value);
+                            },
+                            onEditingComplete: () {
+                              print("onEditingComplete");
+                            },
+                            onSubmitted: (value) {
+                              print("onSubmitted:" + value);
+                              FocusScope.of(context).requestFocus(focusNode2);
+                            },
                           ),
-                          onChanged: (value) {
-                            setState(() {
-                              title = value;
-                            });
-                          },
                         ),
+                        const SizedBox(height: 66),
+                        Container(
+                          height: 44,
+                          width: 300,
+                          color: Colors.pink,
+                          child: MPFlutter_Wechat_EditableInput(
+                            focusNode: focusNode2,
+                            obscureText: true,
+                          ),
+                        ),
+                        // TextFormField(
+                        //   decoration: const InputDecoration(
+                        //     filled: true,
+                        //     hintText: 'Enter a title...',
+                        //     labelText: 'Title',
+                        //   ),
+                        //   onChanged: (value) {
+                        //     setState(() {
+                        //       title = value;
+                        //     });
+                        //   },
+                        // ),
                         TextFormField(
                           decoration: const InputDecoration(
                             border: OutlineInputBorder(),

@@ -45,66 +45,67 @@ class _FormWidgetsDemoState extends State<FormWidgetsDemo> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       ...[
-                        Container(
-                          height: 44,
-                          width: 300,
-                          color: Colors.blueGrey,
-                          child: MPFlutter_Wechat_EditableInput(
-                            controller: ctl,
-                            cursorColor: Colors.white,
-                            style: const TextStyle(
-                                fontSize: 16, color: Colors.white),
-                            textAlign: TextAlign.center,
-                            autofocus: true,
-                            keyboardType: TextInputType.text,
-                            textInputAction: TextInputAction.next,
-                            onFocus: () {
-                              print("onFocus");
-                            },
-                            onBlur: () {
-                              print("onBlur");
-                            },
-                            onChanged: (value) {
-                              print("onChanged:" + value);
-                            },
-                            onEditingComplete: () {
-                              print("onEditingComplete");
-                            },
-                            onSubmitted: (value) {
-                              print("onSubmitted:" + value);
-                              FocusScope.of(context).requestFocus(focusNode2);
-                            },
-                          ),
-                        ),
-                        const SizedBox(height: 66),
-                        Container(
-                          height: 44,
-                          width: 300,
-                          color: Colors.pink,
-                          child: MPFlutter_Wechat_EditableInput(
-                            focusNode: focusNode2,
-                            obscureText: true,
-                          ),
-                        ),
-                        // TextFormField(
-                        //   decoration: const InputDecoration(
-                        //     filled: true,
-                        //     hintText: 'Enter a title...',
-                        //     labelText: 'Title',
+                        // Container(
+                        //   height: 44,
+                        //   width: 300,
+                        //   color: Colors.blueGrey,
+                        //   child: MPFlutter_Wechat_EditableInput(
+                        //     controller: ctl,
+                        //     cursorColor: Colors.white,
+                        //     style: const TextStyle(
+                        //         fontSize: 16, color: Colors.white),
+                        //     textAlign: TextAlign.center,
+                        //     autofocus: true,
+                        //     keyboardType: TextInputType.text,
+                        //     textInputAction: TextInputAction.newline,
+                        //     onFocus: () {
+                        //       print("onFocus");
+                        //     },
+                        //     onBlur: () {
+                        //       print("onBlur");
+                        //     },
+                        //     onChanged: (value) {
+                        //       print("onChanged:" + value);
+                        //     },
+                        //     onEditingComplete: () {
+                        //       print("onEditingComplete");
+                        //     },
+                        //     onSubmitted: (value) {
+                        //       print("onSubmitted:" + value);
+                        //       FocusScope.of(context).requestFocus(focusNode2);
+                        //     },
                         //   ),
-                        //   onChanged: (value) {
-                        //     setState(() {
-                        //       title = value;
-                        //     });
-                        //   },
                         // ),
-                        TextFormField(
+                        // const SizedBox(height: 66),
+                        // Container(
+                        //   height: 44,
+                        //   width: 300,
+                        //   color: Colors.pink,
+                        //   child: MPFlutter_Wechat_EditableInput(
+                        //     focusNode: focusNode2,
+                        //     obscureText: true,
+                        //   ),
+                        // ),
+                        MPFlutterTextFormField(
+                          decoration: const InputDecoration(
+                            filled: true,
+                            hintText: 'Enter a title...',
+                            labelText: 'Title',
+                          ),
+                          onChanged: (value) {
+                            setState(() {
+                              title = value;
+                            });
+                          },
+                        ),
+                        MPFlutterTextFormField(
                           decoration: const InputDecoration(
                             border: OutlineInputBorder(),
                             filled: true,
                             hintText: 'Enter a description...',
                             labelText: 'Description',
                           ),
+                          textInputAction: TextInputAction.newline,
                           onChanged: (value) {
                             description = value;
                           },
@@ -115,6 +116,7 @@ class _FormWidgetsDemoState extends State<FormWidgetsDemo> {
                           onChanged: (value) {
                             setState(() {
                               date = value;
+                              ctl.text = date.toString();
                             });
                           },
                         ),

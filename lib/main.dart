@@ -12,6 +12,8 @@ import 'package:mpflutter_gallery/ui/ui_infinite_listview.dart'
 import 'package:mpflutter_gallery/ui/ui_waterfall_view.dart'
     deferred as ui_waterfall_view;
 import 'package:mpflutter_gallery/ui/ui_flchart.dart' deferred as ui_flchart;
+import 'package:mpflutter_gallery/ui/ui_grid_image.dart'
+    deferred as ui_grid_image;
 import 'package:mpflutter_gallery/ui/form_app/main.dart'
     deferred as ui_form_app;
 import 'package:mpflutter_gallery/ext/wx_video_view.dart'
@@ -29,6 +31,7 @@ void main() async {
   await ui_waterfall_view.loadLibrary();
   await ui_flchart.loadLibrary();
   await ui_form_app.loadLibrary();
+  await ui_grid_image.loadLibrary();
   await wx_video_view.loadLibrary();
   await wx_map_view.loadLibrary();
   await wx_button.loadLibrary();
@@ -58,6 +61,7 @@ void main() async {
           ui_infinite_listview.UIInfiniteListViewPage(),
       '/ui_waterfall_view': (context) =>
           ui_waterfall_view.UIWaterfallViewPage(),
+      '/ui_grid_image': (context) => ui_grid_image.UIGridImagePage(),
       '/animation_one_page': (context) => animation_one_page.AnimationOnePage(),
       '/flchart_page': (context) => ui_flchart.UIFLChartPage(),
       '/form_app/home': (context) => ui_form_app.HomePage(),

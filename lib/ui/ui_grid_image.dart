@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mpflutter_core/mpflutter_core.dart';
 
 class UIGridImagePage extends StatefulWidget {
   const UIGridImagePage({super.key});
@@ -245,8 +246,16 @@ class _UIGridImagePageState extends State<UIGridImagePage> {
         ),
         itemBuilder: (context, index) {
           return Image.network(
-            imageUrls[index],
+            useNativeCodec(imageUrls[index]),
             fit: BoxFit.cover,
+            loadingBuilder: (_, widget, loadingProgress) {
+              if (loadingProgress == null) {
+                return widget;
+              }
+              return Container(
+                color: Colors.grey,
+              );
+            },
           );
         },
         itemCount: imageUrls.length,

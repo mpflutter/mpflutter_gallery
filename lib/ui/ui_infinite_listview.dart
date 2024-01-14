@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mpflutter_core/mpflutter_core.dart';
+import 'package:mpflutter_gallery/common.dart';
 
 class UIInfiniteListViewPage extends StatefulWidget {
   const UIInfiniteListViewPage({Key? key}) : super(key: key);
@@ -34,9 +35,11 @@ class _UIInfiniteListViewPageState extends State<UIInfiniteListViewPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('无限长 ListView'),
-      ),
+      appBar: AppParams.isSinglePage
+          ? null
+          : AppBar(
+              title: const Text('无限长 ListView'),
+            ),
       body: NotificationListener<ScrollNotification>(
         onNotification: (scrollNotification) {
           if (scrollNotification is ScrollEndNotification &&
@@ -59,10 +62,12 @@ class _UIInfiniteListViewPageState extends State<UIInfiniteListViewPage> {
         },
         child: RefreshIndicator(
           onRefresh: () async {
-            throw "fkjdahfjk";
             await Future.delayed(const Duration(seconds: 2));
           },
           child: ListView.builder(
+            padding: EdgeInsets.only(
+              bottom: MediaQuery.of(context).viewInsets.bottom,
+            ),
             itemBuilder: (context, index) {
               if (index == itemCount - 1 && _isLoading) {
                 return const Center(

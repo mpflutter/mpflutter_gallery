@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:mpflutter_core/mpflutter_core.dart';
+import 'package:mpflutter_gallery/common.dart';
 
 final examples = {
   "MPFlutter Auto Test": "/auto_test",
@@ -59,10 +60,20 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  void _onLaunchEnter(query) {
-    if (query.isNotEmpty) {
-      if (query["routeName"] == "/ui_infinite_listview") {
-        Navigator.of(context).pushNamed("/ui_infinite_listview");
+  void _onLaunchEnter(query, options) {
+    final isSinglePage = options["scene"] == 1154;
+    if (isSinglePage) {
+      AppParams.isSinglePage = true;
+      if (query.isNotEmpty) {
+        if (query["routeName"] == "/ui_infinite_listview") {
+          Navigator.of(context).pushReplacementNamed("/ui_infinite_listview");
+        }
+      }
+    } else {
+      if (query.isNotEmpty) {
+        if (query["routeName"] == "/ui_infinite_listview") {
+          Navigator.of(context).pushNamed("/ui_infinite_listview");
+        }
       }
     }
   }

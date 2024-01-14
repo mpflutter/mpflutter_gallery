@@ -44,6 +44,18 @@ class _HomePageState extends State<HomePage> {
       onShareAppMessage: (detail) {
         return MPFlutterWechatAppShareManager.onShareAppMessage(detail);
       },
+      onShareTimeline: (detail) {
+        return MPFlutterWechatAppShareManager.onShareTimeline(detail);
+      },
+      onAddToFavorites: (detail) {
+        return MPFlutterWechatAppShareManager.onAddToFavorites(detail);
+      },
+      onSaveExitState: () {
+        return {
+          "data": {"fooKey": "fooValue of exitState"},
+          "expireTimeStamp": DateTime.now().millisecond + 24 * 60 * 60 * 1000
+        };
+      },
     );
   }
 

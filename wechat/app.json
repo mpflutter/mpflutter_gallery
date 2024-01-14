@@ -1,10 +1,9 @@
 {
   "pages": ["pages/index/index"],
+  "darkmode": true,
   "window": {
-    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "MyApp",
-    "navigationBarTextStyle": "black"
+    "navigationBarTitleText": "MyApp"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",

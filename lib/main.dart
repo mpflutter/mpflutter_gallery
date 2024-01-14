@@ -1,6 +1,14 @@
+import 'package:flutter/src/widgets/framework.dart';
 import 'package:mpflutter_core/mpflutter_core.dart';
 import 'package:flutter/material.dart' deferred as material
-    show MaterialApp, ThemeData, AppBarTheme, Colors, TargetPlatform, Locale;
+    show
+        MaterialApp,
+        ThemeData,
+        AppBarTheme,
+        Colors,
+        TargetPlatform,
+        Locale,
+        ThemeMode;
 // import 'package:full_screen_back_gesture/full_screen_back_gesture.dart';
 import 'package:mpflutter_gallery/home.dart';
 import 'package:mpflutter_gallery/auto_test/auto_test_page.dart'
@@ -36,44 +44,77 @@ void main() async {
   await wx_map_view.loadLibrary();
   await wx_button.loadLibrary();
   await wx_web_view.loadLibrary();
-  runMPApp(material.MaterialApp(
-    title: "",
-    theme: material.ThemeData(
-      useMaterial3: true,
-      appBarTheme: material.AppBarTheme(
-        color: material.Colors.blue,
-        foregroundColor: material.Colors.white,
-        elevation: 5.0,
-        centerTitle: false,
+  runMPApp(const MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({
+    super.key,
+  });
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  void initState() {
+    super.initState();
+    MPFlutterDarkmodeManager.addThemeListener(() {
+      setState(() {});
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return material.MaterialApp(
+      title: "",
+      darkTheme: material.ThemeData(
+        useMaterial3: true,
+        appBarTheme: material.AppBarTheme(
+          color: material.Colors.black,
+          foregroundColor: material.Colors.grey,
+          elevation: 5.0,
+          centerTitle: false,
+        ),
+        platform: material.TargetPlatform.iOS,
       ),
-      platform: material.TargetPlatform.iOS,
-      // pageTransitionsTheme: const PageTransitionsTheme(
-      //   builders: {
-      //     TargetPlatform.iOS: FullScreenBackGesturePageTransitionsBuilder(),
-      //   },
-      // ),
-    ),
-    locale: material.Locale("en"),
-    routes: {
-      '/': (context) => const HomePage(),
-      '/auto_test': (context) => auto_test_page.AutoTestPage(),
-      '/ui_infinite_listview': (context) =>
-          ui_infinite_listview.UIInfiniteListViewPage(),
-      '/ui_waterfall_view': (context) =>
-          ui_waterfall_view.UIWaterfallViewPage(),
-      '/ui_grid_image': (context) => ui_grid_image.UIGridImagePage(),
-      '/animation_one_page': (context) => animation_one_page.AnimationOnePage(),
-      '/flchart_page': (context) => ui_flchart.UIFLChartPage(),
-      '/form_app/home': (context) => ui_form_app.HomePage(),
-      '/form_app/signin_http': (context) => ui_form_app.SignInHttpDemo(),
-      '/form_app/autofill': (context) => ui_form_app.AutofillDemo(),
-      '/form_app/form_widgets': (context) => ui_form_app.FormWidgetsDemo(),
-      '/form_app/validation': (context) => ui_form_app.FormValidationDemo(),
-      '/ext/wx_video_view': (context) => wx_video_view.WXVideoView(),
-      '/ext/wx_map_view': (context) => wx_map_view.WXMapView(),
-      '/ext/wx_button': (context) => wx_button.WXButton(),
-      '/ext/wx_web_view': (context) => wx_web_view.WXWebView(),
-    },
-    navigatorObservers: [MPNavigatorObserver()],
-  ));
+      theme: material.ThemeData(
+        useMaterial3: true,
+        appBarTheme: material.AppBarTheme(
+          color: material.Colors.blue,
+          foregroundColor: material.Colors.white,
+          elevation: 5.0,
+          centerTitle: false,
+        ),
+        platform: material.TargetPlatform.iOS,
+      ),
+      themeMode: MPFlutterDarkmodeManager.isDarkmode()
+          ? material.ThemeMode.dark
+          : material.ThemeMode.light,
+      locale: material.Locale("en"),
+      routes: {
+        '/': (context) => const HomePage(),
+        '/auto_test': (context) => auto_test_page.AutoTestPage(),
+        '/ui_infinite_listview': (context) =>
+            ui_infinite_listview.UIInfiniteListViewPage(),
+        '/ui_waterfall_view': (context) =>
+            ui_waterfall_view.UIWaterfallViewPage(),
+        '/ui_grid_image': (context) => ui_grid_image.UIGridImagePage(),
+        '/animation_one_page': (context) =>
+            animation_one_page.AnimationOnePage(),
+        '/flchart_page': (context) => ui_flchart.UIFLChartPage(),
+        '/form_app/home': (context) => ui_form_app.HomePage(),
+        '/form_app/signin_http': (context) => ui_form_app.SignInHttpDemo(),
+        '/form_app/autofill': (context) => ui_form_app.AutofillDemo(),
+        '/form_app/form_widgets': (context) => ui_form_app.FormWidgetsDemo(),
+        '/form_app/validation': (context) => ui_form_app.FormValidationDemo(),
+        '/ext/wx_video_view': (context) => wx_video_view.WXVideoView(),
+        '/ext/wx_map_view': (context) => wx_map_view.WXMapView(),
+        '/ext/wx_button': (context) => wx_button.WXButton(),
+        '/ext/wx_web_view': (context) => wx_web_view.WXWebView(),
+      },
+      navigatorObservers: [MPNavigatorObserver()],
+    );
+  }
 }

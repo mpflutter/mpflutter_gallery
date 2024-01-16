@@ -1,8 +1,10 @@
 {
   "pages": ["pages/index/index"],
   "darkmode": true,
+  "themeLocation": "theme.json",
   "window": {
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "@navigationBarTextStyle",
+    "navigationBarBackgroundColor": "@navigationBarBackgroundColor",
     "navigationBarTitleText": "MyApp"
   },
   "style": "v2",

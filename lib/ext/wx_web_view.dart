@@ -33,7 +33,7 @@ class _WXWebViewState extends State<WXWebView> {
         child: MaterialButton(
           onPressed: () {
             pvid = MPFlutter_Wechat_WebView.open(
-              "https://www.github.com/",
+              "https://www.github.com/?a=b&fookey=foovalue",
               onLoad: (_) {
                 print("webview loaded");
               },

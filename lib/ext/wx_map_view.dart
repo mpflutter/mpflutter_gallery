@@ -69,6 +69,29 @@ class _WXMapViewState extends State<WXMapView> {
                     }
                   },
                 ),
+                const Divider(),
+                ListTile(
+                  title: const Text('Include Points'),
+                  onTap: () {
+                    final mapContext = controller.getMapContext();
+                    if (mapContext != null) {
+                      mapContext.includePoints(
+                        IncludePointsOption()
+                          ..points = [
+                            MapPostion()
+                              ..latitude = 23.100100
+                              ..longitude = 113.324560,
+                            MapPostion()
+                              ..latitude = 23.100022
+                              ..longitude = 113.347698,
+                          ]
+                          ..fail = (result) {
+                            print(result.errMsg);
+                          },
+                      );
+                    }
+                  },
+                ),
               ],
             ),
           )

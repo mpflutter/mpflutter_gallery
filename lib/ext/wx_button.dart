@@ -41,6 +41,14 @@ class _WXButtonState extends State<WXButton> {
                 color: Colors.blue,
                 child: const Text('Open Setting'),
               ),
+            ),
+            const SizedBox(height: 44),
+            MaterialButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed('/ext/wx_button');
+              },
+              color: Colors.blue,
+              child: const Text('Open Next Page'),
             )
           ],
         ),

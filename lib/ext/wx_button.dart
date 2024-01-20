@@ -17,7 +17,9 @@ class _WXButtonState extends State<WXButton> {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: ModalRoute.of(context)?.settings.arguments != null
+              ? MainAxisAlignment.start
+              : MainAxisAlignment.center,
           children: [
             MPFlutter_Wechat_Button(
               openType: "getUserInfo",
@@ -45,7 +47,8 @@ class _WXButtonState extends State<WXButton> {
             const SizedBox(height: 44),
             MaterialButton(
               onPressed: () {
-                Navigator.of(context).pushNamed('/ext/wx_button');
+                Navigator.of(context)
+                    .pushNamed('/ext/wx_button', arguments: {"top": 0});
               },
               color: Colors.blue,
               child: const Text('Open Next Page'),

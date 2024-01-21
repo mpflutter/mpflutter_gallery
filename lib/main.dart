@@ -29,6 +29,7 @@ import 'package:mpflutter_gallery/ext/wx_video_view.dart'
 import 'package:mpflutter_gallery/ext/wx_map_view.dart' deferred as wx_map_view;
 import 'package:mpflutter_gallery/ext/wx_button.dart' deferred as wx_button;
 import 'package:mpflutter_gallery/ext/wx_web_view.dart' deferred as wx_web_view;
+import 'package:mpflutter_gallery/ext/wx_image.dart' deferred as wx_image;
 
 void main() async {
   Logger.logLevel = LogLevel.info;
@@ -44,6 +45,7 @@ void main() async {
   await wx_map_view.loadLibrary();
   await wx_button.loadLibrary();
   await wx_web_view.loadLibrary();
+  await wx_image.loadLibrary();
   runMPApp(const MyApp());
 }
 
@@ -113,6 +115,7 @@ class _MyAppState extends State<MyApp> {
         '/ext/wx_map_view': (context) => wx_map_view.WXMapView(),
         '/ext/wx_button': (context) => wx_button.WXButton(),
         '/ext/wx_web_view': (context) => wx_web_view.WXWebView(),
+        '/ext/wx_image': (context) => wx_image.WXImage(),
       },
       navigatorObservers: [MPNavigatorObserver()],
     );

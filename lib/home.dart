@@ -17,6 +17,7 @@ final examples = {
   "Ext - WXButton": "/ext/wx_button",
   "Ext - WXMapView": "/ext/wx_map_view",
   "Ext - WXWebView": "/ext/wx_web_view",
+  "Ext - WXImage": "/ext/wx_image",
 };
 final exampleKeys = examples.keys.toList();
 
@@ -94,7 +95,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('MPFlutter 小程序示例'),
+        title: const Text(
+          'MPFlutter 小程序示例',
+          style: TextStyle(fontFamily: "XXXX"),
+        ),
       ),
       body: ListView.separated(
         itemBuilder: (context, index) {

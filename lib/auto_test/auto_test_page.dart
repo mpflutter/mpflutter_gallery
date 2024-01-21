@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mpflutter_gallery/auto_test/encode_image_page.dart';
 import 'package:mpflutter_gallery/auto_test/wx_async_result.test.dart';
 import 'package:mpflutter_gallery/auto_test/wx_dio.test.dart';
+import 'package:mpflutter_gallery/auto_test/wx_getx_network.test.dart';
 import 'package:mpflutter_gallery/auto_test/wx_http.test.dart';
 import 'package:mpflutter_gallery/auto_test/wx_shared_preferences_page.dart';
 import 'package:mpflutter_gallery/auto_test/wx_sync_result.test.dart';
@@ -27,6 +28,7 @@ class _AutoTestPageState extends State<AutoTestPage> {
           WXAsyncResultTest(),
           WXHttpTest(),
           WXDioTest(),
+          WXGetxNetworkTest(),
           WXSharedPreferencesTest(),
           WXBigTextTest(),
           EncodeImageTest(),

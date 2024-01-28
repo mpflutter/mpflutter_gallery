@@ -46,6 +46,13 @@ class _HomePageState extends State<HomePage> {
       onShareAppMessage: (detail) {
         return MPFlutterWechatAppShareManager.onShareAppMessage(detail);
       },
+      // onShareAppMessageAsync: (detail, callback) async {
+      //   await Future.delayed(const Duration(milliseconds: 1500));
+      //   callback({
+      //     "title": "delay",
+      //     "path": "pages/index/index",
+      //   });
+      // },
       onShareTimeline: (detail) {
         return MPFlutterWechatAppShareManager.onShareTimeline(detail);
       },

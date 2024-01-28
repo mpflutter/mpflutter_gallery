@@ -275,6 +275,13 @@ packages:
       relative: true
     source: path
     version: "0.0.3"
+  mpflutter_wechat_image:
+    dependency: "direct main"
+    description:
+      path: "../mpflutter_wechat_plugins/image"
+      relative: true
+    source: path
+    version: "0.0.1"
   mpflutter_wechat_mapview:
     dependency: "direct main"
     description:

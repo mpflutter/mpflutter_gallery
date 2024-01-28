@@ -97,7 +97,6 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text(
           'MPFlutter 小程序示例',
-          style: TextStyle(fontFamily: "XXXX"),
         ),
       ),
       body: ListView.separated(

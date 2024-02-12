@@ -9,6 +9,7 @@ final examples = {
   "无限长 ListView": "/ui_infinite_listview",
   "瀑布流 WaterfallView": "/ui_waterfall_view",
   "图片列表 Grid Image": "/ui_grid_image",
+  "MiniTex": "/ui_minitex",
   "Animation One Page": "/animation_one_page",
   "图表 fl_chart": "/flchart_page",
   "Simple Shader": "/simple_shader_page",
@@ -104,7 +105,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text(
           'MPFlutter 小程序示例',
-          style: TextStyle(fontFamily: "XXXX"),
+          // style: TextStyle(fontFamily: "XXXX"),
         ),
       ),
       body: ListView.separated(
@@ -113,7 +114,9 @@ class _HomePageState extends State<HomePage> {
             onTap: () {
               Navigator.of(context).pushNamed(examples[exampleKeys[index]]!);
             },
-            title: Text(exampleKeys[index]),
+            title: Text(
+              exampleKeys[index],
+            ),
           );
         },
         separatorBuilder: (context, index) {

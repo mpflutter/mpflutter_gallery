@@ -9,7 +9,7 @@ final examples = {
   "无限长 ListView": "/ui_infinite_listview",
   "瀑布流 WaterfallView": "/ui_waterfall_view",
   "图片列表 Grid Image": "/ui_grid_image",
-  "MiniTex": "/ui_minitex",
+  "MiniTexTest": "/ui_minitex",
   "Animation One Page": "/animation_one_page",
   "图表 fl_chart": "/flchart_page",
   "Simple Shader": "/simple_shader_page",

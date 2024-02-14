@@ -662,7 +662,7 @@ class _UIMiniTexPageState extends State<UIMiniTexPage> {
                   ),
                 ),
                 TextSpan(
-                  text: '和平。',
+                  text: '和平。🚗⚽️🎾🏉',
                   style: miniTextFontStyle.merge(
                     const TextStyle(
                       fontSize: 24,
@@ -711,7 +711,7 @@ class _UIMiniTexPageState extends State<UIMiniTexPage> {
                   ),
                 ),
                 TextSpan(
-                  text: '和平。',
+                  text: '和平。🚗⚽️🎾🏉',
                   style: skiaTextFontStyle.merge(
                     const TextStyle(
                       fontSize: 24,

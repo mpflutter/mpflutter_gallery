@@ -32,6 +32,10 @@ class _UIMiniTexPageState extends State<UIMiniTexPage> {
           const Divider(height: 1),
           _renderSimpleText(),
           const Divider(),
+          _renderTextWithLetterSpacing(),
+          const Divider(),
+          _renderTextWithWordSpacing(),
+          const Divider(),
           _renderFontWeightText(),
           const Divider(),
           _renderTextWithBackground(),
@@ -380,6 +384,68 @@ class _UIMiniTexPageState extends State<UIMiniTexPage> {
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
             ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Row _renderTextWithLetterSpacing() {
+    return Row(
+      children: [
+        Container(
+          height: 100,
+          width: MediaQuery.of(context).size.width / 2,
+          alignment: Alignment.center,
+          child: Text(
+            'Hello, World!Test 你好吗？同学，Hello Mate.',
+            style: miniTextFontStyle.merge(const TextStyle(
+              color: Colors.blue,
+              letterSpacing: 8,
+            )),
+          ),
+        ),
+        Container(
+          height: 100,
+          width: MediaQuery.of(context).size.width / 2,
+          alignment: Alignment.center,
+          child: Text(
+            'Hello, World!Test 你好吗？同学，Hello Mate.',
+            style: skiaTextFontStyle.merge(const TextStyle(
+              color: Colors.blue,
+              letterSpacing: 8,
+            )),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Row _renderTextWithWordSpacing() {
+    return Row(
+      children: [
+        Container(
+          height: 100,
+          width: MediaQuery.of(context).size.width / 2,
+          alignment: Alignment.center,
+          child: Text(
+            'Hello, World! Test 你好吗？同学，Hello Mate.',
+            style: miniTextFontStyle.merge(const TextStyle(
+              color: Colors.blue,
+              wordSpacing: 16,
+            )),
+          ),
+        ),
+        Container(
+          height: 100,
+          width: MediaQuery.of(context).size.width / 2,
+          alignment: Alignment.center,
+          child: Text(
+            'Hello, World! Test 你好吗？同学，Hello Mate.',
+            style: skiaTextFontStyle.merge(const TextStyle(
+              color: Colors.blue,
+              wordSpacing: 16,
+            )),
           ),
         ),
       ],

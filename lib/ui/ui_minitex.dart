@@ -46,6 +46,8 @@ class _UIMiniTexPageState extends State<UIMiniTexPage> {
           const Divider(),
           _renderMultipleLinesText(),
           const Divider(),
+          _renderMultipleLinesTextAlignJustify(),
+          const Divider(),
           _renderMultipleLinesTextWithMaxLines(),
           const Divider(),
           _renderUnderlineText(),
@@ -349,6 +351,41 @@ class _UIMiniTexPageState extends State<UIMiniTexPage> {
     );
   }
 
+  Row _renderMultipleLinesTextAlignJustify() {
+    return Row(
+      children: [
+        Container(
+          width: MediaQuery.of(context).size.width / 2,
+          alignment: Alignment.center,
+          child: SizedBox(
+            width: 100,
+            child: Text(
+              '　　空出前两空格才是正确的，你好吗？这是多行Hello, World!文本，这里应该有很多文字字字字。',
+              style: miniTextFontStyle.merge(const TextStyle(
+                color: Colors.red,
+              )),
+              textAlign: TextAlign.justify,
+            ),
+          ),
+        ),
+        Container(
+          width: MediaQuery.of(context).size.width / 2,
+          alignment: Alignment.center,
+          child: SizedBox(
+            width: 100,
+            child: Text(
+              '　　空出前两空格才是正确的，你好吗？这是多行Hello, World!文本，这里应该有很多文字字字字。',
+              style: skiaTextFontStyle.merge(const TextStyle(
+                color: Colors.red,
+              )),
+              textAlign: TextAlign.justify,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
   Row _renderMultipleLinesTextWithMaxLines() {
     return Row(
       children: [
@@ -429,7 +466,7 @@ class _UIMiniTexPageState extends State<UIMiniTexPage> {
           width: MediaQuery.of(context).size.width / 2,
           alignment: Alignment.center,
           child: Text(
-            'Hello, World! Test 你好吗？同学，Hello Mate.',
+            'Hello, World! Test 你好 吗？同  学，Hello Mate.',
             style: miniTextFontStyle.merge(const TextStyle(
               color: Colors.blue,
               wordSpacing: 16,
@@ -441,7 +478,7 @@ class _UIMiniTexPageState extends State<UIMiniTexPage> {
           width: MediaQuery.of(context).size.width / 2,
           alignment: Alignment.center,
           child: Text(
-            'Hello, World! Test 你好吗？同学，Hello Mate.',
+            'Hello, World! Test 你好 吗？同  学，Hello Mate.',
             style: skiaTextFontStyle.merge(const TextStyle(
               color: Colors.blue,
               wordSpacing: 16,
@@ -728,7 +765,7 @@ class _UIMiniTexPageState extends State<UIMiniTexPage> {
                   ),
                 ),
                 TextSpan(
-                  text: '和平。🚗⚽️🎾🏉',
+                  text: '和平。\n🚗⚽️🎾🏉',
                   style: miniTextFontStyle.merge(
                     const TextStyle(
                       fontSize: 24,
@@ -777,7 +814,7 @@ class _UIMiniTexPageState extends State<UIMiniTexPage> {
                   ),
                 ),
                 TextSpan(
-                  text: '和平。🚗⚽️🎾🏉',
+                  text: '和平。\n🚗⚽️🎾🏉',
                   style: skiaTextFontStyle.merge(
                     const TextStyle(
                       fontSize: 24,

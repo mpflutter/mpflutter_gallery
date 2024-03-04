@@ -3,6 +3,7 @@
 // BSD-style license that can be found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:mpflutter_gallery/ui/form_app/src/form_widgets_mp.dart';
 
 import 'src/autofill.dart';
 import 'src/form_widgets.dart';
@@ -12,6 +13,7 @@ import 'src/validation.dart';
 
 export 'src/autofill.dart';
 export 'src/form_widgets.dart';
+export 'src/form_widgets_mp.dart';
 export 'src/http/mock_client.dart';
 export 'src/sign_in_http.dart';
 export 'src/validation.dart';
@@ -39,6 +41,11 @@ final demos = [
     name: 'Form widgets',
     route: 'form_widgets',
     builder: (context) => const FormWidgetsDemo(),
+  ),
+  Demo(
+    name: 'Form widgets MP',
+    route: 'form_widgets_mp',
+    builder: (context) => const FormWidgetsMPDemo(),
   ),
   Demo(
     name: 'Validation',

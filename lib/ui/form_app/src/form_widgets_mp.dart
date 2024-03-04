@@ -6,14 +6,14 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart' as intl;
 import 'package:mpflutter_wechat_editable/mpflutter_wechat_editable.dart';
 
-class FormWidgetsDemo extends StatefulWidget {
-  const FormWidgetsDemo({super.key});
+class FormWidgetsMPDemo extends StatefulWidget {
+  const FormWidgetsMPDemo({super.key});
 
   @override
-  State<FormWidgetsDemo> createState() => _FormWidgetsDemoState();
+  State<FormWidgetsMPDemo> createState() => _FormWidgetsMPDemoState();
 }
 
-class _FormWidgetsDemoState extends State<FormWidgetsDemo> {
+class _FormWidgetsMPDemoState extends State<FormWidgetsMPDemo> {
   final _formKey = GlobalKey<FormState>();
   String title = '';
   String description = '';
@@ -86,7 +86,7 @@ class _FormWidgetsDemoState extends State<FormWidgetsDemo> {
                         //     obscureText: true,
                         //   ),
                         // ),
-                        TextFormField(
+                        MPFlutterTextFormField(
                           decoration: const InputDecoration(
                             filled: true,
                             hintText: 'Enter a title...',
@@ -98,7 +98,7 @@ class _FormWidgetsDemoState extends State<FormWidgetsDemo> {
                             });
                           },
                         ),
-                        TextFormField(
+                        MPFlutterTextFormField(
                           decoration: const InputDecoration(
                             border: OutlineInputBorder(),
                             filled: true,
@@ -124,7 +124,7 @@ class _FormWidgetsDemoState extends State<FormWidgetsDemo> {
                           },
                           maxLines: 5,
                         ),
-                        TextFormField(
+                        MPFlutterTextFormField(
                           decoration: const InputDecoration(
                             border: OutlineInputBorder(),
                             filled: true,
@@ -137,7 +137,7 @@ class _FormWidgetsDemoState extends State<FormWidgetsDemo> {
                           },
                           maxLines: 5,
                         ),
-                        TextFormField(
+                        MPFlutterTextFormField(
                           decoration: const InputDecoration(
                             border: OutlineInputBorder(),
                             filled: true,

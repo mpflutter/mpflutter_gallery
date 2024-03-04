@@ -118,6 +118,8 @@ class _MyAppState extends State<MyApp> {
         '/form_app/signin_http': (context) => ui_form_app.SignInHttpDemo(),
         '/form_app/autofill': (context) => ui_form_app.AutofillDemo(),
         '/form_app/form_widgets': (context) => ui_form_app.FormWidgetsDemo(),
+        '/form_app/form_widgets_mp': (context) =>
+            ui_form_app.FormWidgetsMPDemo(),
         '/form_app/validation': (context) => ui_form_app.FormValidationDemo(),
         '/ext/wx_video_view': (context) => wx_video_view.WXVideoView(),
         '/ext/wx_map_view': (context) => wx_map_view.WXMapView(),

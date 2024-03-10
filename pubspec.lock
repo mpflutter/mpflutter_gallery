@@ -57,6 +57,14 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "3.0.3"
+  cupertino_icons:
+    dependency: "direct main"
+    description:
+      name: cupertino_icons
+      sha256: d57953e10f9f8327ce64a508a355f0b1ec902193f66288e8cb5070e7c47eeb2d
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.6"
   dio:
     dependency: "direct main"
     description:
@@ -246,21 +254,21 @@ packages:
       path: "../mpflutter_build_tools"
       relative: true
     source: path
-    version: "2.2.0"
+    version: "2.3.4"
   mpflutter_core:
     dependency: "direct main"
     description:
       path: "../mpflutter"
       relative: true
     source: path
-    version: "2.2.0"
+    version: "2.3.2"
   mpflutter_wechat_api:
     dependency: "direct main"
     description:
       path: "../mpflutter_wechat_api"
       relative: true
     source: path
-    version: "2.2.0"
+    version: "2.2.1"
   mpflutter_wechat_button:
     dependency: "direct main"
     description:
@@ -274,7 +282,7 @@ packages:
       path: "../mpflutter_wechat_plugins/editable"
       relative: true
     source: path
-    version: "0.0.3"
+    version: "0.0.6"
   mpflutter_wechat_image:
     dependency: "direct main"
     description:

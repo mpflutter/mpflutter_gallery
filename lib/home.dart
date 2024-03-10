@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mpflutter_core/mpflutter_core.dart';
 import 'package:mpflutter_gallery/common.dart';
@@ -116,6 +117,14 @@ class _HomePageState extends State<HomePage> {
             },
             title: Text(
               exampleKeys[index],
+            ),
+            trailing: Transform.translate(
+              offset: const Offset(10.0, 0.0),
+              child: const Icon(
+                CupertinoIcons.right_chevron,
+                color: Colors.black,
+                size: 12,
+              ),
             ),
           );
         },

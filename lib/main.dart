@@ -34,6 +34,8 @@ import 'package:mpflutter_gallery/ext/wx_map_view.dart' deferred as wx_map_view;
 import 'package:mpflutter_gallery/ext/wx_button.dart' deferred as wx_button;
 import 'package:mpflutter_gallery/ext/wx_web_view.dart' deferred as wx_web_view;
 import 'package:mpflutter_gallery/ext/wx_image.dart' deferred as wx_image;
+import 'package:mpflutter_gallery/benchmark/benchmark.dart'
+    deferred as benchmark;
 
 void main() async {
   // Logger.logLevel = LogLevel.info;
@@ -51,6 +53,7 @@ void main() async {
   await wx_button.loadLibrary();
   await wx_web_view.loadLibrary();
   await wx_image.loadLibrary();
+  await benchmark.loadLibrary();
   runMPApp(const MyApp());
 }
 
@@ -126,6 +129,7 @@ class _MyAppState extends State<MyApp> {
         '/ext/wx_button': (context) => wx_button.WXButton(),
         '/ext/wx_web_view': (context) => wx_web_view.WXWebView(),
         '/ext/wx_image': (context) => wx_image.WXImage(),
+        '/benchmark': (context) => benchmark.BenchmarkPage(),
       },
       // home: material.Scaffold(
       //   body: Center(

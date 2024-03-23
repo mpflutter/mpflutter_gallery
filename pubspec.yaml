@@ -41,7 +41,10 @@ dev_dependencies:
 
 dependency_overrides: 
   audioplayers_web:
-    path: /Users/saiakirahui/Documents/mpflutter/audioplayers/packages/audioplayers_web
+    git: 
+      url: https://github.com/mpflutter/audioplayers.git
+      ref: mpflutter-v5.2.1
+      path: packages/audioplayers_web
 
 flutter:
   uses-material-design: true

@@ -32,11 +32,16 @@ dependencies:
   shared_preferences: ^2.2.2
   get: ^4.6.6
   cupertino_icons: ^1.0.6
+  audioplayers: ^5.2.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+
+dependency_overrides: 
+  audioplayers_web:
+    path: /Users/saiakirahui/Documents/mpflutter/audioplayers/packages/audioplayers_web
 
 flutter:
   uses-material-design: true

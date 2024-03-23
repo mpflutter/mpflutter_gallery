@@ -20,6 +20,7 @@ final examples = {
   "Ext - WXMapView": "/ext/wx_map_view",
   "Ext - WXWebView": "/ext/wx_web_view",
   "Ext - WXImage": "/ext/wx_image",
+  "AudioPlayer": "/audioplayer",
   "Benchmark": "/benchmark",
 };
 final exampleKeys = examples.keys.toList();

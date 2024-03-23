@@ -36,6 +36,7 @@ import 'package:mpflutter_gallery/ext/wx_web_view.dart' deferred as wx_web_view;
 import 'package:mpflutter_gallery/ext/wx_image.dart' deferred as wx_image;
 import 'package:mpflutter_gallery/benchmark/benchmark.dart'
     deferred as benchmark;
+import 'package:mpflutter_gallery/ext/audioplayer.dart' deferred as audioplayer;
 
 void main() async {
   // Logger.logLevel = LogLevel.info;
@@ -54,6 +55,7 @@ void main() async {
   await wx_web_view.loadLibrary();
   await wx_image.loadLibrary();
   await benchmark.loadLibrary();
+  await audioplayer.loadLibrary();
   runMPApp(const MyApp());
 }
 
@@ -130,6 +132,7 @@ class _MyAppState extends State<MyApp> {
         '/ext/wx_web_view': (context) => wx_web_view.WXWebView(),
         '/ext/wx_image': (context) => wx_image.WXImage(),
         '/benchmark': (context) => benchmark.BenchmarkPage(),
+        '/audioplayer': (context) => audioplayer.AudioPlayerPage(),
       },
       // home: material.Scaffold(
       //   body: Center(

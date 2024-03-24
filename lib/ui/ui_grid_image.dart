@@ -245,8 +245,8 @@ class _UIGridImagePageState extends State<UIGridImagePage> {
           mainAxisSpacing: 8.0,
         ),
         itemBuilder: (context, index) {
-          return Image.network(
-            useNativeCodec(imageUrls[index]),
+          return Image(
+            image: MPFlutterNetworkImage(imageUrls[index]),
             fit: BoxFit.cover,
             loadingBuilder: (_, widget, loadingProgress) {
               if (loadingProgress == null) {
@@ -257,6 +257,18 @@ class _UIGridImagePageState extends State<UIGridImagePage> {
               );
             },
           );
+          // return Image.network(
+          //   useNativeCodec(imageUrls[index]),
+          //   fit: BoxFit.cover,
+          //   loadingBuilder: (_, widget, loadingProgress) {
+          //     if (loadingProgress == null) {
+          //       return widget;
+          //     }
+          //     return Container(
+          //       color: Colors.grey,
+          //     );
+          //   },
+          // );
         },
         itemCount: imageUrls.length,
       ),

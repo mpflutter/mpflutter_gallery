@@ -5,6 +5,7 @@ import 'package:mpflutter_core/mpflutter_core.dart';
 import 'package:flutter/material.dart' deferred as material
     show
         MaterialApp,
+        Scaffold,
         ThemeData,
         AppBarTheme,
         Colors,
@@ -38,54 +39,63 @@ import 'package:mpflutter_gallery/ext/wx_image.dart' deferred as wx_image;
 void main() async {
   // Logger.logLevel = LogLevel.info;
   await material.loadLibrary();
-  // await auto_test_page.loadLibrary();
-  // await animation_one_page.loadLibrary();
-  // await ui_infinite_listview.loadLibrary();
-  // await ui_waterfall_view.loadLibrary();
-  // await ui_flchart.loadLibrary();
-  // await ui_form_app.loadLibrary();
-  // await ui_grid_image.loadLibrary();
-  // await wx_video_view.loadLibrary();
-  // await wx_map_view.loadLibrary();
-  // await wx_button.loadLibrary();
-  // await wx_web_view.loadLibrary();
-  // await wx_image.loadLibrary();
-  runMPApp(TestApp());
+  await auto_test_page.loadLibrary();
+  await animation_one_page.loadLibrary();
+  await ui_infinite_listview.loadLibrary();
+  await ui_waterfall_view.loadLibrary();
+  await ui_flchart.loadLibrary();
+  await ui_form_app.loadLibrary();
+  await ui_grid_image.loadLibrary();
+  await wx_video_view.loadLibrary();
+  await wx_map_view.loadLibrary();
+  await wx_button.loadLibrary();
+  await wx_web_view.loadLibrary();
+  await wx_image.loadLibrary();
+  runMPApp(MyApp());
 }
 
-class TestApp extends StatefulWidget {
+class TestPage extends StatefulWidget {
   @override
-  State<TestApp> createState() => _TestAppState();
+  State<TestPage> createState() => _TestPageState();
 }
 
-class _TestAppState extends State<TestApp> with SingleTickerProviderStateMixin {
+class _TestPageState extends State<TestPage>
+    with SingleTickerProviderStateMixin {
   late AnimationController animationController;
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   animationController = AnimationController(
-  //       vsync: this, value: 0, lowerBound: 0, upperBound: 200);
-  //   animationController.addListener(() {
-  //     setState(() {});
-  //   });
-  //   animationController.repeat(
-  //     min: 0,
-  //     max: 200,
-  //     reverse: true,
-  //     period: Duration(seconds: 3),
-  //   );
-  // }
+  @override
+  void initState() {
+    super.initState();
+    animationController = AnimationController(
+        vsync: this, value: 0, lowerBound: 0, upperBound: 200);
+    animationController.addListener(() {
+      setState(() {});
+    });
+    // animationController.repeat(
+    //   min: 0,
+    //   max: 200,
+    //   reverse: true,
+    //   period: Duration(seconds: 3),
+    // );
+  }
 
   @override
   Widget build(BuildContext context) {
-    return material.Container(
-      color: material.Colors.red,
-      child: Center(
-        child: Container(
-          width: 44,
-          height: 44,
-          color: material.Colors.blue,
+    return material.Scaffold(
+      body: material.Container(
+        color: material.Colors.red,
+        child: Center(
+          child: Container(
+            width: 200 + animationController.value,
+            height: 44 + animationController.value,
+            color: material.Colors.blue,
+            child: Center(
+              child: Text(
+                'Hello World',
+                style: TextStyle(fontSize: 14, color: material.Colors.black),
+              ),
+            ),
+          ),
         ),
       ),
     );
@@ -105,9 +115,9 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    MPFlutterDarkmodeManager.addThemeListener(() {
-      setState(() {});
-    });
+    // MPFlutterDarkmodeManager.addThemeListener(() {
+    //   setState(() {});
+    // });
   }
 
   @override
@@ -133,13 +143,15 @@ class _MyAppState extends State<MyApp> {
           centerTitle: false,
         ),
         platform: material.TargetPlatform.iOS,
+        fontFamily: "MiniTex",
+        fontFamilyFallback: ["MiniTex"],
       ),
-      themeMode: MPFlutterDarkmodeManager.isDarkmode()
-          ? material.ThemeMode.dark
-          : material.ThemeMode.light,
+      // themeMode: MPFlutterDarkmodeManager.isDarkmode()
+      //     ? material.ThemeMode.dark
+      //     : material.ThemeMode.light,
       locale: material.Locale("en"),
       routes: {
-        '/': (context) => const HomePage(),
+        '/': (context) => HomePage(),
         '/auto_test': (context) => auto_test_page.AutoTestPage(),
         '/ui_infinite_listview': (context) =>
             ui_infinite_listview.UIInfiniteListViewPage(),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mpflutter_core/mpflutter_core.dart';
+import 'package:easy_image_viewer/easy_image_viewer.dart';
 
 class UIGridImagePage extends StatefulWidget {
   const UIGridImagePage({super.key});
@@ -245,17 +246,25 @@ class _UIGridImagePageState extends State<UIGridImagePage> {
           mainAxisSpacing: 8.0,
         ),
         itemBuilder: (context, index) {
-          return Image(
-            image: MPFlutterNetworkImage(imageUrls[index]),
-            fit: BoxFit.cover,
-            loadingBuilder: (_, widget, loadingProgress) {
-              if (loadingProgress == null) {
-                return widget;
-              }
-              return Container(
-                color: Colors.grey,
-              );
+          return GestureDetector(
+            onTap: () {
+              final imageProvider = MPFlutterNetworkImage(imageUrls[index]);
+              showImageViewer(context, imageProvider, onViewerDismissed: () {
+                print("dismissed");
+              });
             },
+            child: Image(
+              image: MPFlutterNetworkImage(imageUrls[index]),
+              fit: BoxFit.cover,
+              loadingBuilder: (_, widget, loadingProgress) {
+                if (loadingProgress == null) {
+                  return widget;
+                }
+                return Container(
+                  color: Colors.grey,
+                );
+              },
+            ),
           );
           // return Image.network(
           //   useNativeCodec(imageUrls[index]),

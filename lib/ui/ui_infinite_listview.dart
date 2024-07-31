@@ -35,11 +35,16 @@ class _UIInfiniteListViewPageState extends State<UIInfiniteListViewPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppParams.isSinglePage
-          ? null
-          : AppBar(
-              title: const Text('无限长 ListView'),
-            ),
+      // appBar: AppParams.isSinglePage
+      //     ? null
+      //     : AppBar(
+      //         title: const Text('无限长 ListView'),
+      //       ),
+      appBar: DouyinAppBar(
+        title: '无限长 ListView',
+        frontColor: Colors.black,
+        backgroundColor: Colors.blue,
+      ),
       body: NotificationListener<ScrollNotification>(
         onNotification: (scrollNotification) {
           if (scrollNotification is ScrollEndNotification &&

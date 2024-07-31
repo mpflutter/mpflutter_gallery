@@ -1,3 +1,5 @@
+import 'package:mpflutter_core/mpflutter_core.dart';
+
 import './flchart_resources/app_resources.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
@@ -8,9 +10,10 @@ class UIFLChartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("fl_chart"),
-      ),
+      // appBar: AppBar(
+      //   title: const Text("fl_chart"),
+      // ),
+      appBar: DouyinAppBar(title: 'fl_chart'),
       backgroundColor: Colors.lightBlue,
       body: const Center(
         child: SizedBox(

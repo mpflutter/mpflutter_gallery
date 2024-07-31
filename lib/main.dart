@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/basic.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/widgets.dart';
@@ -135,17 +136,22 @@ class _MyAppState extends State<MyApp> {
         platform: material.TargetPlatform.iOS,
       ),
       theme: material.ThemeData(
-        useMaterial3: true,
-        appBarTheme: material.AppBarTheme(
-          color: material.Colors.blue,
-          foregroundColor: material.Colors.white,
-          elevation: 5.0,
-          centerTitle: false,
-        ),
-        platform: material.TargetPlatform.iOS,
-        fontFamily: "MiniTex",
-        fontFamilyFallback: ["MiniTex"],
-      ),
+          useMaterial3: true,
+          appBarTheme: material.AppBarTheme(
+            color: material.Colors.blue,
+            foregroundColor: material.Colors.white,
+            elevation: 5.0,
+            centerTitle: false,
+          ),
+          platform: material.TargetPlatform.iOS,
+          fontFamily: "MiniTex",
+          fontFamilyFallback: ["MiniTex"],
+          pageTransitionsTheme: PageTransitionsTheme(
+            builders: {
+              TargetPlatform.android: NoTransitionsBuilder(),
+              TargetPlatform.iOS: NoTransitionsBuilder(),
+            },
+          )),
       // themeMode: MPFlutterDarkmodeManager.isDarkmode()
       //     ? material.ThemeMode.dark
       //     : material.ThemeMode.light,
@@ -174,5 +180,18 @@ class _MyAppState extends State<MyApp> {
       },
       navigatorObservers: [MPNavigatorObserver()],
     );
+  }
+}
+
+class NoTransitionsBuilder extends PageTransitionsBuilder {
+  @override
+  Widget buildTransitions<T>(
+    PageRoute<T> route,
+    BuildContext context,
+    Animation<double> animation,
+    Animation<double> secondaryAnimation,
+    Widget child,
+  ) {
+    return child;
   }
 }

@@ -1,8 +1,10 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:mpflutter_core/mpflutter_core.dart';
 import 'package:mpflutter_gallery/common.dart';
+import 'package:mpflutter_core/mpjs/mpjs.dart' as mpjs;
 
 final examples = {
   "MPFlutter Auto Test": "/auto_test",
@@ -94,16 +96,19 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'MPFlutter 小程序示例',
-        ),
-      ),
+      // appBar: AppBar(
+      //   title: const Text(
+      //     'MPFlutter 小程序示例',
+      //   ),
+      // ),
+      appBar: DouyinAppBar(title: 'MPFlutter 小程序示例'),
       body: ListView.separated(
         itemBuilder: (context, index) {
           return ListTile(
             onTap: () {
-              Navigator.of(context).pushNamed(examples[exampleKeys[index]]!);
+              DouyinNavigator.of(context).pushNamed(
+                examples[exampleKeys[index]]!,
+              );
             },
             title: Text(exampleKeys[index]),
           );

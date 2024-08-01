@@ -34,6 +34,7 @@ import 'package:mpflutter_gallery/ext/wx_map_view.dart' deferred as wx_map_view;
 import 'package:mpflutter_gallery/ext/wx_button.dart' deferred as wx_button;
 import 'package:mpflutter_gallery/ext/wx_web_view.dart' deferred as wx_web_view;
 import 'package:mpflutter_gallery/ext/wx_image.dart' deferred as wx_image;
+import 'package:mpflutter_gallery/ext/wx_ad.dart' deferred as wx_ad;
 import 'package:mpflutter_gallery/benchmark/benchmark.dart'
     deferred as benchmark;
 import 'package:mpflutter_gallery/ext/audioplayer.dart' deferred as audioplayer;
@@ -54,6 +55,7 @@ void main() async {
   await wx_button.loadLibrary();
   await wx_web_view.loadLibrary();
   await wx_image.loadLibrary();
+  await wx_ad.loadLibrary();
   await benchmark.loadLibrary();
   await audioplayer.loadLibrary();
   runMPApp(const MyApp());
@@ -131,6 +133,7 @@ class _MyAppState extends State<MyApp> {
         '/ext/wx_button': (context) => wx_button.WXButton(),
         '/ext/wx_web_view': (context) => wx_web_view.WXWebView(),
         '/ext/wx_image': (context) => wx_image.WXImage(),
+        '/ext/wx_ad': (context) => wx_ad.WXAd(),
         '/benchmark': (context) => benchmark.BenchmarkPage(),
         '/audioplayer': (context) => audioplayer.AudioPlayerPage(),
       },

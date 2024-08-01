@@ -20,6 +20,7 @@ final examples = {
   "Ext - WXMapView": "/ext/wx_map_view",
   "Ext - WXWebView": "/ext/wx_web_view",
   "Ext - WXImage": "/ext/wx_image",
+  "Ext - WXAd": "/ext/wx_ad",
   "AudioPlayer": "/audioplayer",
   "Benchmark": "/benchmark",
 };

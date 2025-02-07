@@ -246,6 +246,9 @@ class _UIGridImagePageState extends State<UIGridImagePage> {
           mainAxisSpacing: 8.0,
         ),
         itemBuilder: (context, index) {
+          if (index == 0) {
+            return Image.asset('assets/5013664.jpeg', fit: BoxFit.cover);
+          }
           return GestureDetector(
             onTap: () {
               final imageProvider = MPFlutterNetworkImage(imageUrls[index]);
@@ -254,7 +257,7 @@ class _UIGridImagePageState extends State<UIGridImagePage> {
               });
             },
             child: Image(
-              image: MPFlutterNetworkImage(imageUrls[index]),
+              image: MPFlutterNetworkImage(imageUrls[index - 1]),
               fit: BoxFit.cover,
               loadingBuilder: (_, widget, loadingProgress) {
                 if (loadingProgress == null) {
@@ -279,7 +282,7 @@ class _UIGridImagePageState extends State<UIGridImagePage> {
           //   },
           // );
         },
-        itemCount: imageUrls.length,
+        itemCount: imageUrls.length + 1,
       ),
     );
   }
